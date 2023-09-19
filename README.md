@@ -1,6 +1,10 @@
-# Study TensorFlow Federated
+# TRƯỜNG ĐẠI HỌC CÔNG NGHỆ - ĐẠI HỌC QUỐC GIA HÀ NỘI
+# BÁO CÁO HỌC PHẦN THỰC TẬP DOANH NGHIỆP
+<img src="https://cdn.haitrieu.com/wp-content/uploads/2021/10/Logo-DH-Cong-Nghe-UET.png" alt="drawing" width="400"/>
 
-## Trịnh Công Vinh - 20021478 - K65N-CLC - UET - VNU.
++ ## Tìm hiểu thư viện TensorFlow Federated 
++ ## Giảng viên: TS. Nguyễn Ngọc Tân
++ ## Sinh viên: Trịnh Công Vinh - 20021478 - K65NCLC.
 
 ## Giới thiệu chung về Thư viện [TFF](https://www.tensorflow.org/federated):
 
@@ -25,3 +29,4 @@ TensorFlow Federated (TFF) là một thư viện mã nguồn mở dành cho vi�
 + Mã nguồn áp dụng TFF nghiên cứu Federated Learning của Google: [github](https://github.com/google-research/federated)
 
 + Các video hướng dẫn về TFF: [video1](https://www.youtube.com/watch?v=yERlX7KmIao) | [video2](https://www.youtube.com/watch?v=JBNas6Yd30A&t=3818s)
+
