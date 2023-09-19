@@ -1,21 +1,21 @@
 import tensorflow as tf
 import tensorflow_federated as tff
 
-# Load simulation data.
+# Tải dữ liệu mô phỏng.
 source, _ = tff.simulation.datasets.emnist.load_data()
 def client_data(n):
   return source.create_tf_dataset_for_client(source.client_ids[n]).map(
       lambda e: (tf.reshape(e['pixels'], [-1]), e['label'])
   ).repeat(10).batch(20)
 
-# Pick a subset of client devices to participate in training.
+
+# Chọn một tập hợp con các máy khách để tham gia train.
 train_data = [client_data(n) for n in range(3)]
 
-# Wrap a Keras model for use with TFF.
+# Gói mô hình Keras để sử dụng với TFF.
 def model_fn():
   model = tf.keras.models.Sequential([
-      tf.keras.layers.Dense(10, tf.nn.softmax, input_shape=(784,),
-                            kernel_initializer='zeros')
+      tf.keras.layers.Dense(10, tf.nn.softmax, input_shape=(784,), kernel_initializer='zeros')
   ])
   return tff.learning.models.from_keras_model(
       model,
@@ -23,13 +23,13 @@ def model_fn():
       loss=tf.keras.losses.SparseCategoricalCrossentropy(),
       metrics=[tf.keras.metrics.SparseCategoricalAccuracy()])
 
-# Simulate a few rounds of training with the selected client devices.
+# Mô phỏng một vài vòng đào tạo (training round)  với các máy khách đã chọn.
 trainer = tff.learning.algorithms.build_weighted_fed_avg(
   model_fn,
   client_optimizer_fn=lambda: tf.keras.optimizers.SGD(0.1))
 state = trainer.initialize()
 for _ in range(5):
-  result = trainer.next(state, train_data)
-  state = result.state
-  metrics = result.metrics
-  print(metrics['client_work']['train']['loss'])
+    result = trainer.next(state, train_data)
+    state = result.state
+    metrics = result.metrics
+    print(metrics['client_work']['train']['loss'])

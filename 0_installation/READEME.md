@@ -59,3 +59,5 @@
     ```
     python3 main.py
     ```
+
+## Bên cạnh đó, ta có thể cài đặt TensorFlow Federated theo [hướng dẫn](https://www.tensorflow.org/install/pip) để tối ưu khả năng sử dụng GPU của máy tính nếu có.
