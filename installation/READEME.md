@@ -27,7 +27,7 @@
 5. Build thư viện TensorFlow Federated thành package Python tại máy.
     ```
     mkdir "/tmp/tensorflow_federated"
-    bazel run //tensorflow_federated/tools/python_package:build_python_package -- \
+    bazel run /tmp/tensorflow_federated/tools/python_package:build_python_package -- \
     --output_dir="/tmp/tensorflow_federated"
     ```
 6. Thoát khỏi môi trường ảo python.
@@ -36,8 +36,8 @@
     ```
 7. Tạo một dự án mới như thư mục này.
     ```
-    mkdir "0_installation"
-    cd "0_installation"
+    mkdir "installation"
+    cd "installation"
     ```
 8. Tạo một môi trường ảo mới cho python.
     ```
